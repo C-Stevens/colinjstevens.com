@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colin J. Stevens</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
+    <link rel="stylesheet" type="text/css" href="res/css/index.css"/>
+</head>
+<body>
+    <div class="ui main text container">
+        <h1 class="ui header">Colin Stevens</h1>
+        <p>foo bar baz</p>
+    </div>
+
+    <div id="menu_bar">
+        <div class="ui pointing links secondary menu">
+            <div class="ui text container">
+                <a class="item" data-tab="about">About</a>
+                <a href="#" class="item">Blog</a>
+                <a class="item" data-tab="cv">CV</a>
+                <a class="item" data-tab="contact">Contact</a>
+            </div>
+        </div>
+        <div class="ui tab segment" data-tab="about">
+            <!--##BUILD: about.html##-->
+        </div>
+        <div class="ui tab segment" data-tab="cv">
+            <!--##BUILD: cv.html##-->
+        </div>
+        <div class="ui tab segment" data-tab="contact">
+            <!--##BUILD: contact.html##-->
+        </div>
+    </div>
+    
+    <!-- Script imports -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://colinjstevens.com/res/js/jquery.address.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script>
+        $('#menu_bar .menu .item').tab({
+            history : true,
+            context : '#menu_bar',
+            historyType : 'state',
+            path        : '/',
+        });
+    </script>
+</body>
+</html>
