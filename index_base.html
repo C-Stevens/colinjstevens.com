@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Colin J. Stevens</title>
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
     <link rel="stylesheet" type="text/css" href="res/css/index.css"/>
+    <meta charset="utf-8"/>
+    <title>Colin Stevens</title>
 </head>
 <body>
     <div class="ui main text container">
-        <h1 class="ui header">Colin Stevens</h1>
-        <p>foo bar baz</p>
+        <h1 class="ui huge centered name header">Colin Stevens</h1>
     </div>
 
-    <div id="menu_bar">
-        <div class="ui pointing links secondary menu">
+    <div id="main_content">
+        <div class="ui fixed fluid four item secondary pointing links menu">
             <div class="ui text container">
                 <a class="item" data-tab="about">About</a>
                 <a href="#" class="item">Blog</a>
@@ -37,11 +37,17 @@
     <script type="text/javascript" src="https://colinjstevens.com/res/js/jquery.address.js"></script>
     <script src="semantic/dist/semantic.min.js"></script>
     <script>
-        $('#menu_bar .menu .item').tab({
+        if(screen.width <= 480) { // Mobile devices
+            $('#main_content').attr("style", "max-width: 90%; width: 90%");
+        }
+        $('#main_content .menu .item').tab({
             history : true,
-            context : '#menu_bar',
+            context : '#main_content',
             historyType : 'state',
             path        : '/',
+        });
+        $('.secondary.menu').sticky({
+//             context: '#menu_bar',
         });
     </script>
 </body>
