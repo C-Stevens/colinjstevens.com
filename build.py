@@ -28,7 +28,7 @@ def buildIndex():
     matches and write their contents into a temporary file. Returns a temporary file
     handler.'''
     tmp = tempfile.TemporaryFile(mode='r+', encoding='UTF-8')
-    vprint("Scanning `{0}` for build comments...".format(BASEFILE.name), 1)
+    vprint("- Scanning `{0}` for build comments...".format(BASEFILE.name), 1)
     for line in BASEFILE.readlines():
         result = re.match('\s*<!--##BUILD:(\s)?(?P<filePath>.*)##-->', line)
         if result:
@@ -46,7 +46,7 @@ def buildIndex():
         else:
             tmp.write(line)
     tmp.seek(0)
-    vprint("Index concatenated.", 1)
+    vprint("- Index concatenated.", 1)
     return tmp
 
 
@@ -55,7 +55,9 @@ if __name__ == "__main__":
     tmp = buildIndex()
     OUTFILE.write(tmp.read())
     # Cleanup
+    vprint("Cleaning up... ", end="")
     tmp.close()
     BASEFILE.close()
     OUTFILE.close()
+    vprint("done")
     vprint("Build complete.") #TODO: Check for build errors
