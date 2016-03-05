@@ -1,8 +1,125 @@
 <html>
 <head>
-
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
+    <link rel="stylesheet" type="text/css" href="res/css/index.css"/>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="res/js/obfuscate-email.js"></script>
+    <style>
+        body > .ui.list {
+            background-color: white;
+            border: none;
+            box-shadow: none;
+            max-width: 50%;
+            margin: auto auto;
+        }
+        body > .ui.list > .item > .content > .ui.list {
+            margin-left: 12px;
+        }
+        body > .ui.list > .item {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+        #links_list .list, ol.ui.list ol, ul.ui.list ul {
+            padding-top: 0;
+        }
+        .ui.list > .item > .content > p:first-of-type {
+            margin-top: 6px;
+            margin-bottom: 2px;
+        }
+    </style>
 </head>
 <body>
-    <pre>Contact!!</pre>
+    <div class="ui divided list">
+        <div class="item"> <!-- Email -->
+            <div class="header"><i class="mail icon"></i>Email</div>
+            <div class="content">
+                <p>I receive mail at the accounts below, all of which are able to receive PGP encrypted mail.</p>
+                <p style="margin-bottom: -5px">My key's fingerprint is <span style="font-family: monospace">9952 D345 315A 072E 513C AF2A 43A8 A014 495B 444F</span> and can be downloaded here.</p>
+                <div class="ui list"> <!-- Emails list -->
+                    <div class="item">
+                        <i class="right triangle icon"></i>
+                        <div class="content">
+                            <script>mail("mail","colinjstevens",0,"")</script> &mdash; my main address for professional contact.
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="right triangle icon"></i>
+                        <div class="content">
+                            <script>mail("postmaster","colinjstevens",0,"")</script> &mdash; for site-specific questions or notifications.
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="right triangle icon"></i>
+                        <div class="content">
+                            <script>mail("mail","mogdog66",0,"")</script> &mdash; main address for non-professional contact.
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="right triangle icon"></i>
+                        <div class="content">
+                            <script>mail("colinstevens123","gmail",0,"")</script> &mdash; alternate reliable contact address.
+                        </div>
+                    </div>
+                </div> <!-- End emails list -->
+            </div>
+        </div> <!-- End email -->
+        <div class="item"> <!-- IRC -->
+            <div class="header"><i class="comment icon"></i>IRC</div>
+            <div class="content">
+                <p>I maintain a presence on the <a href="https://freenode.net/">freenode</a> <a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat">IRC</a> network, where I use the name <b>MogDog</b>.</p>
+            </div>
+        </div> <!-- End IRC -->
+        <div class="item"> <!-- Around the web -->
+            <div class="header"><i class="globe icon"></i>Around the Web</div>
+            <div class="content">
+                <p>I have a footprint all over other parts of the web as well, some of which appear below.</p>
+                <div class="ui three column internally celled grid container" id="links_list"> <!-- Links grid -->
+                    <div class="column"> <!-- Links list column 1 -->
+                        <div class="ui list">
+                            <div class="item"> <!-- Github -->
+                                <i class="github icon"></i>
+                                <div class="content"><a href="https://github.com/C-Stevens">Github</a></div>
+                            </div>
+                            <div class="item"> <!-- LinkedIn -->
+                                <i class="linkedin icon"></i>
+                                <div class="content"><a href="https://www.linkedin.com/pub/colin-stevens/b9/a2b/576">LinkedIn</a></div>
+                            </div>
+                        </div>
+                    </div> <!-- End links list column 1 -->
+                    <div class="column"> <!-- Links list column 2 -->
+                        <div class="ui list">
+                            <div class="item"> <!-- Keybase -->
+                                <i class="privacy icon"></i>
+                                <div class="content"><a href="https://keybase.io/colinstevens">Keybase</a></div>
+                            </div>
+                            <div class="item"> <!-- mog.dog -->
+                                <i class="server icon"></i>
+                                <div class="content"><a href="https://mog.dog">Andromeda</a></div>
+                            </div>
+                        </div>
+                    </div> <!-- End links list column 2 -->
+                    <div class="column"> <!-- Links list column 3 -->
+                        <div class="ui list">
+                            <div class="item"> <!-- Steam -->
+                                <i class="steam icon"></i>
+                                <div class="content"><a href="https://steamcommunity.com/id/mogdog66">Steam</a></div>
+                            </div>
+                            <div class="item"> <!-- Portal wiki -->
+                                <i class="right arrow icon"></i>
+                                <div class="content"><a href="http://theportalwiki.com/wiki/User:MogDog66">The Portal Wiki</a></div>
+                            </div>
+                        </div>
+                    </div> <!-- End links list column 3 -->
+                </div> <!-- End links grid -->
+            </div>
+        </div> <!-- End around the web -->
+        <div class="item"> <!-- Additional -->
+            <div class="header"><i class="help icon"></i>Additional</div>
+            <div class="content">
+                <p>Additional contact information is available on request. If you'd like another way to get a hold of me, please contact me through one of the above channels first.</p>
+            </div>
+        </div> <!-- End additional -->
+    </div>
 </body>
 </html>
