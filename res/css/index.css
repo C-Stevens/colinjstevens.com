@@ -24,6 +24,7 @@ body {
 
 #main_content {
     margin: auto auto;
+    width: 50%;
     max-width: 50%;
 }
 
@@ -57,4 +58,31 @@ body {
 /*    border: none !important;*/
 /*    box-shadow: 0 3px 10px;*/
 /*    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);*/
+}
+
+/* About tab styling */
+#about > .ui.segments {
+    border: none;
+    box-shadow: none;
+}
+
+#about > .ui.segments > .segment > p:first-of-type {
+    padding-top: 7px;
+}
+
+#about > .ui.segments > .segment > .label > span {
+    vertical-align: middle;
+}
+
+/* Contact tab styling */
+#contact > .ui.list > .item {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+#contact #links_list .list, ol.ui.list ol, ul.ui.list ul {
+    padding: 0;
+}
+#contact .ui.list > .item > .content > p:first-of-type {
+    margin-top: 6px;
+    margin-bottom: 2px;
 }
