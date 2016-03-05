@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
     <link rel="stylesheet" type="text/css" href="res/css/index.css"/>
+    <script src="res/js/obfuscate-email.js"></script>
     <meta charset="utf-8"/>
     <title>Colin Stevens</title>
 </head>
@@ -12,22 +13,22 @@
         <h1 class="ui huge centered name header">Colin Stevens</h1>
     </div>
 
-    <div id="main_content">
+    <div class="ui container" id="main_content">
         <div class="ui fixed fluid four item secondary pointing links menu">
             <div class="ui text container">
                 <a class="item" data-tab="about">About</a>
-                <a href="#" class="item">Blog</a>
+                <a class="link item" href="http://blog.colinjstevens.com">Blog</a>
                 <a class="item" data-tab="cv">CV</a>
                 <a class="item" data-tab="contact">Contact</a>
             </div>
         </div>
-        <div class="ui tab segment" data-tab="about">
+        <div class="ui tab segment" id="about" data-tab="about">
             <!--##BUILD: about.html##-->
         </div>
-        <div class="ui tab segment" data-tab="cv">
+        <div class="ui tab segment" id="cv" data-tab="cv">
             <!--##BUILD: cv.html##-->
         </div>
-        <div class="ui tab segment" data-tab="contact">
+        <div class="ui tab segment" id="contact" data-tab="contact">
             <!--##BUILD: contact.html##-->
         </div>
     </div>
@@ -46,9 +47,7 @@
             historyType : 'state',
             path        : '/',
         });
-        $('.secondary.menu').sticky({
-//             context: '#menu_bar',
-        });
+        $('.secondary.menu').sticky();
     </script>
 </body>
 </html>
