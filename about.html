@@ -1,8 +1,84 @@
 <html>
 <head>
-
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
+    <link rel="stylesheet" type="text/css" href="res/css/index.css"/>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <style>
+        body > h2 {
+            max-width: 50%;
+            margin: auto auto;
+        }
+        body > .ui.segments {
+            background-color: white;
+            border: none;
+            box-shadow: none;
+            max-width: 50%;
+            margin: auto auto;
+        }
+        body > .ui.segments > .segment > .label > span {
+            vertical-align: middle;
+        }
+        body > .ui.segments > .segment > p:first-of-type {
+            padding-top: 7px;
+        }
+    </style>
 </head>
 <body>
-    <pre>Hello world!</pre>
+    <h2>Hello, I'm Colin</h2>
+    <div class="ui segments">
+        <div class="ui basic segment">
+            <div class="ui top attached label">
+                <i class="big info icon"></i>
+                <span>About me</span>
+            </div>
+            <p>I'm a university student studying computer science, with a strong interest in everything computers and learning about new things.</p>
+            <p>Specifically, I focus currently on software development, optimization, project solutions, and improving my coding skills.</p>
+            <p>I have a strong self-taught background in Linux server administration and maintenance, where I've started focusing more on automation and scripting.</p>
+        </div>
+        <div class="ui basic segment">
+            <div class="ui top attached label">
+                <i class="big server icon"></i>
+                <span>My machines</span>
+            </div>
+            <p>My lightweight servers run <a href="https://www.archlinux.org/">Arch Linux</a>, while my stable production platforms run <a href="http://www.ubuntu.com/server">Ubuntu server</a> (currently <a href="http://releases.ubuntu.com/14.04/">v14 stable</a>). My personal machines are <a href="https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup">LUKS</a> encrypted and run either straight Arch linux, or dual boot Arch and <a href="https://en.wikipedia.org/wiki/Windows_10">Windows</a>.</p>
+            <p>For those of my machines that have graphical frontends, I use <a href="https://www.kde.org/">KDE</a> (currently <a href="https://en.wikipedia.org/wiki/KDE_Plasma_5">Plasma 5</a>).</p>
+        </div>
+        <div class="ui basic segment">
+            <div class="ui top attached label">
+                <i class="big code icon"></i>
+                <span>Websites</span>
+            </div>
+            <p style="margin-bottom: -8px">I host only a couple of websites:</p>
+            <div class="ui list">
+                <div class="item">
+                    <i class="right triangle icon"></i>
+                    <div class="content">
+                        <a href="https://colinjstevens.com">colinjstevens.com</a> &mdash; this website.
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="right triangle icon"></i>
+                    <div class="content">
+                        <a href="https://mog.dog">mog.dog</a> &mdash; the frontend of my utility server. It does and hosts lots of random things for me.
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="right triangle icon"></i>
+                    <div class="content">
+                        <a href="http://mogdog66.com">mogdog66.com</a> &mdash; the old domain for my utility server. Now serves as a redirect for legacy URLs.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui basic segment">
+            <div class="ui top attached label">
+                <i class="big help icon"></i>
+                <span>Miscellaneous</span>
+            </div>
+            <p>I spend some of my free time working on <a href="https://github.com/C-Stevens">open source projects</a>, tinkering with my computer(s), reading, and learning about all sorts of things that interest me. <a href="http://blog.colinjstevens.com">Sometimes I even write about those things</a>.</p>
+            <p>For more technical details about me, you can read my <a href="/cv">CV</a>. For ways to get ahold of me, you can read my <a href="/contact">contact</a> details.</p>
+        </div>
+    </div>
 </body>
 </html>
