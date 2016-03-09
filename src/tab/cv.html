@@ -6,24 +6,39 @@
     <script src="semantic/dist/semantic.min.js"></script>
     <script src="res/js/obfuscate-email.js"></script>
     <style>
-        body > .ui.container {
+        body > .ui.segment {
             background-color: white;
             max-width: 50%;
             width: 50%;
             margin: auto auto;
             padding: 14;
         }
-        .ui.container > .content > p:first-of-type {
+        .ui.segment > .content > p:first-of-type {
             margin-top: -10px;
             margin-bottom: 3px;
         }
         #pgp-link {
             font-family: monospace;
         }
+        .skillLevel_1, .skillLevel_2, .skillLevel_3, .skillLevel_4 {
+            font-style: italic;
+        }
+        .skillLevel_1 {
+            color: #5d5d5d;
+        }
+        .skillLevel_2 {
+            color: #924411;
+        }
+        .skillLevel_3 {
+            color: #3b83c0;
+        }
+        .skillLevel_4 {
+            color: #5bbd72;
+        }
     </style>
 </head>
 <body>
-    <div class="ui container">
+    <div class="ui basic segment">
         <div class="ui medium header"> <!-- Main header -->
             Colin Stevens
             <div class="sub header">
@@ -39,7 +54,123 @@
             <div class="content">Skills</div>
         </h2> <!-- End skills header -->
         <div class="content"> <!-- Skills content -->
-            <p>None</p>
+            <p><b>Legend: </b><span class="skillLevel_1">learning</span> &lt; <span class="skillLevel_2">intermediate</span> &lt; <span class="skillLevel_3">familiar</span> &lt; <span class="skillLevel_4">proficient</span></p>
+            <div class="ui stackable two column fitted grid">
+                <div class="column"> <!-- Skills column 1 -->
+                    <div class="ui list"> <!-- Programming languages -->
+                        <div class="item">
+                            <div class="ui tiny header">Programming Languages</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_3">familiar</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">Python</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_2">intermediate</div>
+                            <i class="top aligned right triangle icon"></i>
+                            <div class="content">C</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_1">learning</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">Java</div>
+                        </div>
+                    </div> <!-- End programming languages -->
+                    <div class="ui list"> <!-- Scripting languages -->
+                        <div class="item">
+                            <div class="ui tiny header">Scripting languages</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_2">intermediate</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">Bash</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_1">learning</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">PHP</div>
+                        </div>
+                    </div> <!-- End scripting languages -->
+                    <div class="ui list"> <!-- Web development -->
+                        <div class="item">
+                            <div class="ui tiny header">Web Development</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_3">familiar</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">HTML</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_3">familiar</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">CSS</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_2">intermediate</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">Javascript</div>
+                        </div>
+                    </div> <!-- End web development -->
+                </div> <!-- End skills column 1 -->
+                <div class="column"> <!-- Skills column 2 -->
+                    <div class="ui list"> <!-- Libraries/Frameworks -->
+                        <div class="item">
+                            <div class="ui tiny header">Libraries &amp; Frameworks</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_2">intermediate</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">Semantic UI</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_2">intermediate</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">Django</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_1">learning</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">JavaFX</div>
+                        </div>
+                    </div> <!-- End libraries/frameworks -->
+                    <div class="ui list"> <!-- Version control -->
+                        <div class="item">
+                            <div class="ui tiny header">Version Control</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_2">intermediate</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">Git</div>
+                        </div>
+                    </div> <!-- End version control -->
+                    <div class="ui list"> <!-- Software -->
+                        <div class="item">
+                            <div class="ui tiny header">Software</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_4">proficient</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">Linux</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_4">proficient</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">nginx</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_4">proficient</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">Microsoft Office</div>
+                        </div>
+                        <div class="item">
+                            <div class="right floated skillLevel_3">familiar</div>
+                            <i class="right triangle icon"></i>
+                            <div class="content">Photoshop</div>
+                        </div>
+                    </div> <!-- End software -->
+                </div> <!-- End skills column 2 -->
+            </div>
         </div> <!-- End skills content -->
         <h2 class="ui header"> <!-- Projects header -->
             <i class="code icon"></i>
@@ -76,6 +207,7 @@
                     </div>
                 </div> <!-- End personal website project -->
             </div>
+            <p>Other smaller or miscellaneous projects are available online on my <a href="https://github.com/C-Stevens">GitHub</a> profile</p>
         </div> <!-- End projects content -->
         <h2 class="ui header"> <!-- Work experience header -->
             <i class="user icon"></i>
