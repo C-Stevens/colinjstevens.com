@@ -38,13 +38,15 @@
     <script type="text/javascript" src="res/js/jquery.address.min.js"></script>
     <script src="semantic/dist/semantic.min.js"></script>
     <script>
-        $('#main_content .menu .item').tab({
-            history : true,
-            context : '#main_content',
-            historyType : 'state',
-            path        : '/',
+        $(document).ready(function() {
+            $('#main_content .menu .item').tab({
+                history : true,
+                context : '#main_content',
+                historyType : 'state',
+                path        : '/',
+            });
+            $('.secondary.menu').sticky();
         });
-        $('.secondary.menu').sticky();
     </script>
 </body>
 </html>
