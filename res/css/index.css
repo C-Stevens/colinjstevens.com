@@ -86,3 +86,27 @@ body {
     margin-top: 6px;
     margin-bottom: 2px;
 }
+
+/* CV tab styling */
+#cv > .ui.container > .content > p:first-of-type {
+    margin-top: -10px;
+    margin-bottom: 3px;
+}
+#pgp-link {
+    font-family: monospace;
+}
+.skillLevel_1, .skillLevel_2, .skillLevel_3, .skillLevel_4 {
+    font-style: italic;
+}
+.skillLevel_1 {
+    color: #5d5d5d;
+}
+.skillLevel_2 {
+    color: #924411;
+}
+.skillLevel_3 {
+    color: #3b83c0;
+}
+.skillLevel_4 {
+    color: #5bbd72;
+}
