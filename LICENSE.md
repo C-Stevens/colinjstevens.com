@@ -7,7 +7,7 @@ This repository contains assets from a couple different projects. As such, some 
 | [Subtle Patterns](http://subtlepatterns.com/) | [```/res/img/bg.png```](/res/img/bg.png) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/us/legalcode)
 | [Fira Sans](https://github.com/mozilla/Fira)  | [```/res/fonts/```](/res/fonts/)         | [SIL OFL](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web)
 
-All other files and assets, unless otherwise notated here, in the file's header, or in the file's accompanying directory are &copy; Colin Stevens 2015 and licensed under the MIT License, which is provided below in full.
+All other files and assets, unless otherwise notated here, in the file's header, or in the file's accompanying directory are &copy; Colin Stevens 2015-2016 and licensed under the MIT License, which is provided below in full.
 
 The MIT License (MIT)
 
