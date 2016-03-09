@@ -1,8 +1,8 @@
-import re
-import tempfile
+import re, tempfile
+#from css_html_js_minify import process_single_html_file, process_single_js_file, process_single_css_file, html_minify, js_minify, css_minify
 
 OUTFILE = open("index.html", 'w')
-BASEFILE = open("index_base.html")
+BASEFILE = open("src/index_base.html")
 
 def vprint(s, indentNum=0, **args):
     '''Print wrapper, allows argument based indenting.'''
@@ -53,6 +53,7 @@ def buildIndex():
 if __name__ == "__main__":
     vprint("Building index...")
     tmp = buildIndex()
+    print(str(tmp))
     OUTFILE.write(tmp.read())
     # Cleanup
     vprint("Cleaning up... ", end="")
