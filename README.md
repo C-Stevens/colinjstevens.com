@@ -13,3 +13,6 @@ This project makes use of a few assets to make things look slick and run well, m
 
 # License
 For detailed licensing information, refer to the [license](/LICENSE.md) file.
+
+# TODO
+* Minifify source files in src/ in build.py
