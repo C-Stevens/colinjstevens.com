@@ -1,3 +1,4 @@
 .directory
 index.html
 *.kate-swp
+priv/*
