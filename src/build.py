@@ -1,12 +1,29 @@
-import re, tempfile
-#from css_html_js_minify import process_single_html_file, process_single_js_file, process_single_css_file, html_minify, js_minify, css_minify
+import sys, re, tempfile
 
-OUTFILE = open("index.html", 'w')
-BASEFILE = open("src/index_base.html")
+BUILD_DIR = ""
+OUTFILE_STR = "index.html"
+BASEFILE_STR = "index_base.html"
+OUTFILE = None
+BASEFILE = None
+runError = False
 
 def vprint(s, indentNum=0, **args):
     '''Print wrapper, allows argument based indenting.'''
     print("{0}{1}".format(("\t"*indentNum), s), **args)
+
+def baseSetup():
+    '''Basic preliminary setup before building.'''
+    global runError
+    global BUILD_DIR
+    global OUTFILE
+    global BASEFILE
+    try:
+        BUILD_DIR = sys.argv[1]
+        OUTFILE = open("{0}/{1}".format(BUILD_DIR, OUTFILE_STR), 'w')
+        BASEFILE = open("{0}/{1}".format(BUILD_DIR, BASEFILE_STR))
+    except FileNotFoundError as e:
+        vprint("failed ({0})".format(e))
+        runError = True
 
 def extractBody(f):
     '''Creates a string array of the lines in a file `f` between lines containing "<body>",
@@ -27,6 +44,7 @@ def buildIndex():
     '''Matches lines in `BASEFILE` against a regex match, attempts to open files based on
     matches and write their contents into a temporary file. Returns a temporary file
     handler.'''
+    global runError
     tmp = tempfile.TemporaryFile(mode='r+', encoding='UTF-8')
     vprint("- Scanning `{0}` for build comments...".format(BASEFILE.name), 1)
     for line in BASEFILE.readlines():
@@ -35,9 +53,10 @@ def buildIndex():
             filePath = result.groupdict()['filePath']
             vprint("* Found build comment. Inserting body content from `{0}`... ".format(filePath), 2, end="")
             try:
-                sourceFile = open(filePath)
+                sourceFile = open("{0}/{1}".format(BUILD_DIR,filePath))
             except FileNotFoundError as e:
                 vprint("failed ({0})".format(e))
+                runError = True
                 continue
             for l in extractBody(sourceFile):
                 tmp.write(l)
@@ -46,19 +65,26 @@ def buildIndex():
         else:
             tmp.write(line)
     tmp.seek(0)
-    vprint("- Index concatenated.", 1)
     return tmp
 
 
 if __name__ == "__main__":
-    vprint("Building index...")
-    tmp = buildIndex()
-    print(str(tmp))
-    OUTFILE.write(tmp.read())
-    # Cleanup
-    vprint("Cleaning up... ", end="")
-    tmp.close()
-    BASEFILE.close()
-    OUTFILE.close()
-    vprint("done")
-    vprint("Build complete.") #TODO: Check for build errors
+    vprint("Beginning pre-build setup... ", end="") 
+    baseSetup()
+    if not runError:
+        vprint("done")
+        vprint("Building index...")
+        if not runError:
+            tmp = buildIndex()
+            OUTFILE.write(tmp.read())
+            vprint("- Index concatenated.", 1)
+        vprint("Cleaning up... ", end="")
+        tmp.close()
+        BASEFILE.close()
+        OUTFILE.close()
+        vprint("done")
+        if not runError:
+            vprint("Build successfully completed.")
+            exit(0)
+    vprint("Build ended with error(s).")
+    exit(1)
