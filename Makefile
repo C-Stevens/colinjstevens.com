@@ -10,9 +10,11 @@
 BASE_DIR ?= /home/web/www/colinjstevens.com
 SRC_DIR = $(BASE_DIR)/src
 BUILD_DIR = $(BASE_DIR)/build
+BUILD_HISTORY_DIR = $(BASE_DIR)/build-history
+BUILD_DATE := $(shell date | sed 's/ /-/g')
 
 all: clean git-init build
-stage: clean build # TODO: Change base dir
+stage: clean build
 
 build: build-init index
 	cp $(BUILD_DIR)/index.html $(BASE_DIR)
@@ -29,4 +31,4 @@ index:
 
 clean:
 	if [ -f "$(BASE_DIR)/index.html" ]; then rm "$(BASE_DIR)/index.html"; fi
-	if [ -d "$(BUILD_DIR)" ]; then rm -rf "$(BUILD_DIR)"; fi
+	if [ -d "$(BUILD_DIR)" ]; then cp -r $(BUILD_DIR) $(BUILD_HISTORY_DIR)/$(BUILD_DATE); rm -rf "$(BUILD_DIR)"; fi
