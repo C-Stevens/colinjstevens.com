@@ -7,11 +7,12 @@
 #	python3 (https://python.org)
 #
 
+BUILD_DATE := $(shell date | sed 's/ /-/g')
+
 BASE_DIR ?= /home/web/www/colinjstevens.com
 SRC_DIR = $(BASE_DIR)/src
 BUILD_DIR = $(BASE_DIR)/build
 BUILD_HISTORY_DIR = $(BASE_DIR)/build-history
-BUILD_DATE := $(shell date | sed 's/ /-/g')
 
 all: clean git-init build
 stage: clean build
