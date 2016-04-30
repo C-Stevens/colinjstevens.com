@@ -16,3 +16,4 @@ For detailed licensing information, refer to the [license](/LICENSE.md) file.
 
 # TODO
 * Minifify source files in src/ in build.py
+* Update link paths in LICENSE file
