@@ -1,11 +1,11 @@
 # Licensing Information
-This repository contains assets from a couple different projects. As such, some different licensing on files may apply. Please see below for details regarding individual assets and thier licenses.
+This repository contains assets from a couple different projects. As such, some different licensing on files may apply. Please see below for details regarding individual assets and their licenses.
 
-| Asset                                         | Directory                                | License  
-|-----------------------------------------------|------------------------------------------| ------:
-| [Semantic UI](http://semantic-ui.com/)        | [```/res/ui/```](/res/ui/)               | [MIT License](/res/ui/LICENSE.md)
-| [Subtle Patterns](http://subtlepatterns.com/) | [```/res/img/bg.png```](/res/img/bg.png) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/us/legalcode)
-| [Fira Sans](https://github.com/mozilla/Fira)  | [```/res/fonts/```](/res/fonts/)         | [SIL OFL](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web)
+| Asset                                         | Directory                                                      | License  
+|-----------------------------------------------|----------------------------------------------------------------| -------:
+| [Semantic UI](http://semantic-ui.com/)        | [```/node_modules/semantic-ui/```](/node_modules/semantic-ui/) | [MIT License](/res/ui/LICENSE.md)
+| [Subtle Patterns](http://subtlepatterns.com/) | [```/res/img/bg.png```](/res/img/bg.png)                       | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/us/legalcode)
+| [Fira Sans](https://github.com/mozilla/Fira)  | [```/res/font/```](/res/font/)                                 | [SIL OFL](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web)
 
 All other files and assets, unless otherwise notated here, in the file's header, or in the file's accompanying directory are &copy; Colin Stevens 2015-2016 and licensed under the MIT License, which is provided below in full.
 
