@@ -20,6 +20,18 @@
             margin-top: -10px;
             margin-bottom: 3px;
         }
+        #coursework {
+            color: red;
+            margin-top: -10px;
+            margin-left: 20px;
+/*             min-width: 550px; */
+        }
+        #coursework > .grid {
+            color: red;
+/*             padding-top: 5px; */
+/*             margin-top: -40px; */
+/*             margin-left: 7px; */
+        }
         #pgp-link {
             font-family: monospace;
         }
@@ -39,6 +51,11 @@
             color: #5bbd72;
         }
     </style>
+    <script>
+        $(document).ready(function() {
+            $('.ui.accordion').accordion();
+        });
+    </script>
 </head>
 <body>
     <div class="ui basic segment">
@@ -229,14 +246,16 @@
                         <div class="description">Network site reliability assurance and performance testing, site service technician, and customer support representative.</div>
                     </div>
                 </div> <!-- End Airwave -->
-                <div class="item"> <!-- McAlisters2 -->
+                <!-- Disabled 01/21/17: Job history entry deemed irrelevant
+                <div class="item">
                     <div class="right floated"><i>(October 2015 &mdash; Present)</i></div>
                     <i class="right triangle icon"></i>
                     <div class="content">
                         <a class="header" href="http://www.mcalistersdeli.com/locations/#id=d759175de8">McAlister's Deli &mdash; Columbia, MO</a>
                         <div class="description">Food runner, expiditer, cashier, busboy, food preparation.</div>
                     </div>
-                </div> <!-- End McAlisters2 -->
+                </div>
+                End disabled -->
                 <!-- Disabled 04/30/16: Trimmed CV to only have 2 most recent job histories
                 <div class="item">
                     <div class="right floated"><i>(September 2012 &mdash; August 2014)</i></div>
@@ -256,7 +275,7 @@
         <div class="content"> <!-- Education content -->
             <div class="ui list">
                 <div class="item"> <!-- UM -->
-                    <div class="right floated">Expected: May, 2018</div>
+                    <div class="right floated">Expected: 2018</div>
                     <i class="top aligned right triangle icon"></i>
                     <div class="content">
                         <a class="header" href="http://missouri.edu">University of Missouri &mdash; Columbia, MO</a>
@@ -271,6 +290,14 @@
         </h2> <!-- End activities header -->
         <div class="content"> <!-- Activities content -->
             <div class="ui list">
+                <div class="item"> <!-- Hackmizzou 2016 activity -->
+                    <div class="right floated"><i>October 14-15, 2016</i></div>
+                    <i class="top aligned right triangle icon"></i>
+                    <div class="content">
+                        <a class="header" href="http://theportalwiki.com/wiki/Main_Page">HackMizzou 2016</a>
+                        <div class="description"><i>Attendee</i><br/>Mizzou sponsered <a href="https://en.wikipedia.org/wiki/Hackathon">hackathon</a>. Worked in teams to organize and collaborate creating a software project.</div>
+                    </div>
+                </div> <!-- End Hackmizzou 2016 activity -->
                 <div class="item"> <!-- Portal wiki activity -->
                     <div class="right floated"><i>(October 2012 &mdash; Present)</i></div>
                     <i class="top aligned right triangle icon"></i>
