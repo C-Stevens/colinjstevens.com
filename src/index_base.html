@@ -7,24 +7,19 @@
     <meta charset="utf-8"/>
     <link rel="icon" type="image/x-icon" href="res/img/favicon.ico"/>
     <title>Colin Stevens</title>
-    <!-- Piwik -->
-    <script type="text/javascript">
-    var _paq = _paq || [];
-    _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-    _paq.push(["setCookieDomain", "*.colinjstevens.com"]);
-    _paq.push(["setDomains", ["*.colinjstevens.com"]]);
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-        var u="//colinjstevens.com/priv/piwik/";
-        _paq.push(['setTrackerUrl', u+'piwik.php']);
-        _paq.push(['setSiteId', 1]);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-    })();
+    <script src="res/js/jquery-2.1.4.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.secondary.menu').sticky();
+            $('#main_content .menu .item').tab({
+                history : true,
+                context : '#main_content',
+                historyType : 'state',
+                path        : '/',
+            });
+        });
     </script>
-    <noscript><p><img src="//colinjstevens.com/priv/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-    <!-- End Piwik Code -->
 </head>
 <body>
     <div class="ui main text container">
@@ -52,19 +47,25 @@
     </div>
     
     <!-- Script imports -->
-    <script src="res/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="res/js/jquery.address.min.js"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#main_content .menu .item').tab({
-                history : true,
-                context : '#main_content',
-                historyType : 'state',
-                path        : '/',
-            });
-            $('.secondary.menu').sticky();
-        });
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+    _paq.push(["setCookieDomain", "*.colinjstevens.com"]);
+    _paq.push(["setDomains", ["*.colinjstevens.com"]]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//colinjstevens.com/priv/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 1]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
     </script>
+    <noscript><p><img src="//colinjstevens.com/priv/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik -->
 </body>
 </html>
