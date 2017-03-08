@@ -4,3 +4,4 @@ build-history
 index.html
 *.kate-swp
 priv/*
+node_modules/**/*
