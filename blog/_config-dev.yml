@@ -1,0 +1,7 @@
+url: https://colinjstevens.com/ # add site url http://example.com/
+
+assets:
+  compress:
+    css: false 
+    js: false
+    html: false 
