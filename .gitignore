@@ -5,6 +5,7 @@ priv/*
 
 # Dev excludes
 *.kate-swp
+.kateproject
 .directory
 
 # Jekyll excludes
