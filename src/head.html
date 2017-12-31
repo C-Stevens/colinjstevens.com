@@ -1,0 +1,21 @@
+<!--##BUILDINCLUDE start##-->
+<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
+<link rel="stylesheet" type="text/css" href="res/css/index.css"/>
+<script src="res/js/obfuscate-email.js"></script>
+<meta charset="utf-8"/>
+<link rel="icon" type="image/x-icon" href="res/img/favicon.ico"/>
+<title>Colin Stevens</title>
+<script src="res/js/jquery-2.1.4.min.js"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.secondary.menu').sticky();
+        $('#main_content .menu .item').tab({
+            history : true,
+            context : '#main_content',
+            historyType : 'state',
+            path        : '/',
+        });
+    });
+</script>
+<!--##BUILDINCLUDE end##-->

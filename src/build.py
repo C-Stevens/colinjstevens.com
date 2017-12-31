@@ -25,16 +25,16 @@ def baseSetup():
         vprint("failed ({0})".format(e))
         runError = True
 
-def extractBody(f):
-    '''Creates a string array of the lines in a file `f` between lines containing "<body>",
-    and "</body>".'''
+def extractContent(f):
+    '''Creates a string array of the lines in a file `f` between lines specified with
+    "<!--##BUILDINCLUDE start##-->" and "<!--##BUILDINCLUDE end##-->.'''
     output = []
     read = False
     for l in f.readlines():
-        if "<body>" in l:
+        if "<!--##BUILDINCLUDE start##-->" in l:
             read = True
             continue # Avoid appending "<body>" to output
-        elif "</body>" in l:
+        elif "<!--##BUILDINCLUDE end##-->" in l:
             read = False
         if read:
             output.append(l)
@@ -51,14 +51,14 @@ def buildIndex():
         result = re.match('\s*<!--##BUILD:(\s)?(?P<filePath>.*)##-->', line)
         if result:
             filePath = result.groupdict()['filePath']
-            vprint("* Found build comment. Inserting body content from `{0}`... ".format(filePath), 2, end="")
+            vprint("* Found build comment. Inserting content from `{0}`... ".format(filePath), 2, end="")
             try:
                 sourceFile = open("{0}/{1}".format(BUILD_DIR,filePath))
             except FileNotFoundError as e:
                 vprint("failed ({0})".format(e))
                 runError = True
                 continue
-            for l in extractBody(sourceFile):
+            for l in extractContent(sourceFile):
                 tmp.write(l)
             sourceFile.close()
             vprint("done")
