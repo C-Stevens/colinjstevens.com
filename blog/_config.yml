@@ -1,0 +1,24 @@
+# Global Configuration
+source:         /home/web/www/cjs-stage/blog
+destination:    /home/web/www/cjs-stage/blog/_site
+baseurl:        "/blog"
+encoding:       "utf-8"
+timezone:       "America/Chicago"
+
+# Build Commands
+strict_front_matter:    true
+show_drafts:    true
+
+#defaults:
+    #-
+        #scope:
+            #path:   ""
+            #type:   "pages"
+        #values:
+            #layout: "site-default"
+    #-
+        #scope:
+            #path:   ""
+            #type:   "posts"
+        #values:
+            #layout: "post"

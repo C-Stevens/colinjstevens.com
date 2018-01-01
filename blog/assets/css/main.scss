@@ -1,0 +1,29 @@
+---
+---
+@import "syntax-highlight/github.scss"; /* Code syntax highlighting theme */
+
+html,body {
+    background:url("{{site.baseurl}}/assets/borrow/img/bg.png");
+    /* Prevent mainContainer margin from adding a scrollbar to the page: */
+    height: 100%;
+    margin: -1px 0 0 0;
+    padding-top: 1px;
+}
+
+#mainContainer {
+    margin-top: 2%;
+}
+
+#header {
+    .ui.dividing.header {
+        font-family: monospace;
+        color: #222;
+        font-size: 50px;
+        small {
+            font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif; /* Semantic UI default */
+            color:  #6f6f6f;
+            font-size: 40%;
+            vertical-align: middle;
+        }
+    }
+}

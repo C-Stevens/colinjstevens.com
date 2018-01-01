@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container">
+        <a href="/">Home</a> &mdash; <a href="/tags">Tags</a>
+    </div>
+    <h1>Post: {{ page.title }}</h1>
+    <hr/>
+    <!-- Content -->
+    <div class="content">
+        {{ content }}
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="center-text">This blog belongs to Mr. Colin Stevens</p>
+        </div>
+    </footer>
+</body>
+</html>
