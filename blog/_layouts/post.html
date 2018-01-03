@@ -2,25 +2,30 @@
 <html lang="en">
 <head>
     {% include head.html %}
-    <title>{{ page.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/css/post.css"/>
+    <title>MogBlog &mdash; {{ page.title }}</title>
 </head>
 <body>
-    <!-- Header -->
-    <div class="container">
-        <a href="/">Home</a> &mdash; <a href="/tags">Tags</a>
-    </div>
-    <h1>Post: {{ page.title }}</h1>
-    <hr/>
-    <!-- Content -->
-    <div class="content">
-        {{ content }}
-    </div>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="center-text">This blog belongs to Mr. Colin Stevens</p>
+    <div class="ui segment container" id="mainContainer">
+        {% include header.html activeTab="posts" %}
+        <div id="contentContainer">
+            <h1 id="postTitle" class="ui header">
+                <div class="content">{{ page.title }}</div>
+                <div id="postMetadata" class="sub header">
+                    <span>By <a href="mailto:{{ page.author_mail }}" title="Contact author">{{ page.author }}</a> on {{ page.date | date: "%B %e, %Y &dash; %I:%M %P" }}</span>
+                    <div id="postTags" class="ui basic right floated labels">
+                        <i class="ui tag icon"></i>
+                        {% for tag in page.tags %}
+                            <a class="ui label" href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </h1>
+            <article>
+                {{ content }}
+            </article>
         </div>
-    </footer>
+        {% include footer.html %}
+    </div>
 </body>
 </html>

@@ -1,8 +1,10 @@
 ---
-title:  "Testing post"
+layout: post
 author: "Colin Stevens"
+author_mail: "mail@colinjstevens.com"
+title:  "Testing post"
 categories: misc
-layout: default
+tags: ["foo", "bar",  "baz" ]
 ---
 
 # Hello and welcome to this test post

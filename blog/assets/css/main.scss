@@ -1,6 +1,7 @@
 ---
 ---
-@import "syntax-highlight/github.scss"; /* Code syntax highlighting theme */
+@import "syntax-highlight/github.scss";
+$default-font:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif; /* Semantic UI default */
 
 html,body {
     background:url("{{site.baseurl}}/assets/borrow/img/bg.png");
@@ -12,18 +13,43 @@ html,body {
 
 #mainContainer {
     margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#contentContainer {
+    padding-top: 25px;
+    margin-bottom: 50px;
 }
 
 #header {
-    .ui.dividing.header {
-        font-family: monospace;
+    #title {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 3px;
         color: #222;
+        font-family: monospace;
         font-size: 50px;
-        small {
-            font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif; /* Semantic UI default */
+        line-height: 1.2em;
+        span { margin-right: 10px; }
+        #titleDescription {
+            margin: auto 0px auto 0px;
+            font: 40% $default-font;
             color:  #6f6f6f;
-            font-size: 40%;
             vertical-align: middle;
         }
     }
+    #menu {
+        font-family: monospace;
+        margin-top: 0;
+    }
+}
+
+#footer {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   font-size: 80%;
+   border-top-right-radius: 0;
+   border-top-left-radius: 0;
 }
