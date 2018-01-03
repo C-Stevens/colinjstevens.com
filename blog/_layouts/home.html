@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+    <title>MogBlog &mdash; {{ page.title }}</title>
+</head>
+<body>
+    <div class="ui segment container" id="mainContainer">
+        {% include header.html activeTab="home" %}
+        <div id="contentContainer">
+            {{ content }}
+        </div>
+        {% include footer.html %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+---
+---
+#contentContainer {
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    h3 {
+        font-size: 1.1em;
+    }
+    h4,h5,h6 {
+        font-size: 1em;
+    }
+    #postTitle {
+        width: 50%;
+        border-bottom: 2px solid lightgrey;
+        font-size: 2em;
+        #postMetadata {
+            a:hover { font-weight: bold; }
+        }
+        #postTags {
+            i {
+                padding-right: 20px;
+                border-right: 2px solid lightgrey;
+            }
+            margin: 8px auto auto auto;
+            .ui.label {
+                margin-left: 3px;
+                margin-right: 3px
+            }
+        }
+    }
+}

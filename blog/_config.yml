@@ -9,6 +9,10 @@ timezone:       "America/Chicago"
 strict_front_matter:    true
 show_drafts:    true
 
+plugins:
+    - jekyll-feed
+
+github_url: "https://github.com/C-Stevens/colinjstevens.com/"
 #defaults:
     #-
         #scope:
