@@ -5,13 +5,13 @@
 <head>
     {% include head.html %}
     <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/css/tag.css"/>
-    <title>MogBlog &mdash; Tags</title>
+    <title>MogBlog &mdash; Categories</title>
 </head>
 <body>
     <div class="ui segment container" id="mainContainer">
         {% include header.html activeTab="tags" %}
         <div id="contentContainer">
-            <h2 class="ui header">Tags</h2>
+            <h2 class="ui header">Categories</h2>
             <div id="tagList" class="ui list">
                 {% for tag in site.tags %}
                     <span class="item">

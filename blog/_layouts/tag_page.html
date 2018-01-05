@@ -5,13 +5,13 @@
 <head>
     {% include head.html %}
     <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/css/tag.css"/>
-    <title>MogBlog &mdash; Tags</title>
+    <title>MogBlog &mdash; Category: {{ page.tag }}</title>
 </head>
 <body>
     <div class="ui segment container" id="mainContainer">
         {% include header.html activeTab="tags" %}
         <div id="contentContainer">
-            <h2 class="ui header">Tag :: {{ page.tag }}</h2>
+            <h2 class="ui header">Category :: {{ page.tag }}</h2>
             <div id="tagList" class="ui bulleted list">
             {% for post in site.posts %}{% for tag in post.tags %}{% if tag == page.tag %}
                 <div class="item">

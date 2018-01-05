@@ -1,0 +1,23 @@
+---
+---
+.post:nth-child(1) {
+    margin-top: 0;
+}
+.post {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    .continueReading {
+        display: block;
+        margin-top: 20px;
+        font-style: italic;
+        font-size: 110%;
+    }
+}
+
+hr {
+    width: 99%;
+}
+hr:last-of-type {
+    display: none;
+}
+

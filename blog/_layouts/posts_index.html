@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
     {% include head.html %}
-    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/css/post.css"/>
-    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/css/home.css"/>
     <title>MogBlog &mdash; {{ page.title }}</title>
 </head>
 <body>
     <div class="ui segment container" id="mainContainer">
-        {% include header.html activeTab="home" %}
+        {% include header.html activeTab="posts" %}
         <div id="contentContainer">
             {{ content }}
         </div>
