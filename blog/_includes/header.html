@@ -9,11 +9,9 @@
                 <div class="ui breadcrumb">
                     <a class="{% if include.activeTab == 'home' %} active {% endif %}  section" href="{{ site.baseurl }}">Home</a>
                     <div class="divider"> / </div>
-                    <a class="{% if include.activeTab == 'posts' %} active {% endif %} section">Posts</a>
+                    <a class="{% if include.activeTab == 'posts' %} active {% endif %} section" href="{{ site.baseurl}}/posts">Posts</a>
                     <div class="divider"> / </div>
-                    <a class="{% if include.activeTab == 'categories' %} active {% endif %} section">Categories</a>
-                    <div class="divider"> / </div>
-                    <a class="{% if include.activeTab == 'tags' %} active {% endif %} section" href="{{ site.baseurl }}/tags">Tags</a>
+                    <a class="{% if include.activeTab == 'tags' %} active {% endif %} section" href="{{ site.baseurl }}/tags">Categories</a>
                     <div class="divider"> / </div>
                     <a class="section">Feed</a>
                 </div>
