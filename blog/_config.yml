@@ -7,22 +7,8 @@ timezone:       "America/Chicago"
 
 # Build Commands
 strict_front_matter:    true
-show_drafts:    true
 
 plugins:
     - jekyll-feed
 
 github_url: "https://github.com/C-Stevens/colinjstevens.com/"
-#defaults:
-    #-
-        #scope:
-            #path:   ""
-            #type:   "pages"
-        #values:
-            #layout: "site-default"
-    #-
-        #scope:
-            #path:   ""
-            #type:   "posts"
-        #values:
-            #layout: "post"

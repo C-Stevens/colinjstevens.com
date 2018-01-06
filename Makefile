@@ -31,7 +31,8 @@ build-init:
 blog:	.FORCE
 .FORCE:
 	cd $(BASE_DIR)/blog && \
-	bundle exec jekyll build $(JEKYLL_ARGS)
+	jekyll build $(JEKYLL_ARGS); \
+	cd $(BASE_DIR); \
 
 index:
 	python3 $(BUILD_DIR)/build.py $(BUILD_DIR)
