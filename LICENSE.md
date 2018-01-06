@@ -1,18 +1,19 @@
 # Licensing Information
 This repository contains assets from a couple different projects. As such, some different licensing on files may apply. Please see below for details regarding individual assets and their licenses.
 
-| Asset                                         | Directory                                                      | License  
+| Asset                                         | Directory                                                      | License
 |-----------------------------------------------|----------------------------------------------------------------| -------:
-| [Semantic UI](http://semantic-ui.com/)        | [```/node_modules/semantic-ui/```](/node_modules/semantic-ui/) | [MIT License](https://github.com/Semantic-Org/Semantic-UI/blob/master/LICENSE.md)
-| [Subtle Patterns](http://subtlepatterns.com/) | [```/res/img/bg.png```](/res/img/bg.png)                       | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/us/legalcode)
-| [Fira Sans](https://github.com/mozilla/Fira)  | [```/res/font/```](/res/font/)                                 | [SIL OFL](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web)
-| [Chalk Theme for Jekyll](https://github.com/nielsenramon/chalk) | [```/blog```](/blog)			 | [MIT License](https://opensource.org/licenses/MIT)
+| [Semantic UI](http://semantic-ui.com/)        | `/node_modules/semantic-ui/`  | [MIT License](https://github.com/Semantic-Org/Semantic-UI/blob/master/LICENSE.md)
+| [Subtle Patterns](http://subtlepatterns.com/) | `/res/img/bg.png`             | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/us/legalcode)
+| [Fira Sans](https://github.com/mozilla/Fira)  | `/res/font/`                  | [SIL OFL](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web)
+| Blog Posts                                    | `/blog/_posts`                | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
 
-All other files and assets, unless otherwise notated here, in the file's header, or in the file's accompanying directory are &copy; Colin Stevens 2015-2017 and licensed under the MIT License, which is provided below in full.
+All other files and assets, unless otherwise notated here, in the file's header, or in the file's accompanying directory are &copy; Colin Stevens 2015-2018 and licensed under the MIT License, which is provided below in full.
 
+```
 The MIT License (MIT)
 
-Copyright (c) 2015-2017 Colin Stevens
+Copyright (c) 2015-2018 Colin Stevens
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -31,3 +32,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
