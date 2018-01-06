@@ -8,11 +8,10 @@ This project makes use of a few assets to make things look slick and run well, m
 * [Subtle Patterns](http://subtlepatterns.com)
 * [Fira Sans](https://github.com/mozilla/Fira)
 * [nginx](http://nginx.com/)
-* [php-fpm](http://php-fpm.org/)
 * [jekyll](https://jekyllrb.com/)
 
 # License
 For detailed licensing information, refer to the [license](/LICENSE.md) file.
 
-# TODO
+# Todo
 * Minifify source files in src/ in build.py
