@@ -1,6 +1,6 @@
 # Global Configuration
-source:         /home/web/www/cjs-stage/blog
-destination:    /home/web/www/cjs-stage/blog/_site
+source:         .
+destination:    ./_site
 baseurl:        "/blog"
 encoding:       "utf-8"
 timezone:       "America/Chicago"
