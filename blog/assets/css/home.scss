@@ -11,11 +11,20 @@
         margin-top: 20px;
         font-style: italic;
         font-size: 110%;
+        width: auto;
+    }
+    #postTitle {
+        .content {
+            a { color: inherit; }
+            a:hover { border-bottom: 1px dotted; }
+        }
     }
 }
 
 hr {
     width: 99%;
+    border-color: #fafafa;
+    
 }
 hr:last-of-type {
     display: none;

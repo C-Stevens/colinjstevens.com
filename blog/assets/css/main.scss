@@ -30,7 +30,10 @@ html,body {
         font-family: monospace;
         font-size: 50px;
         line-height: 1.2em;
-        span { margin-right: 10px; }
+        a { 
+            color: inherit;
+            margin-right: 10px;
+        }
         #titleDescription {
             margin: auto 0px auto 0px;
             font: 40% $default-font;

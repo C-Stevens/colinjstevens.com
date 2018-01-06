@@ -15,7 +15,7 @@
             <div id="tagList" class="ui bulleted list">
             {% for post in site.posts %}{% for tag in post.tags %}{% if tag == page.tag %}
                 <div class="item">
-                    <time datetime='{{post.date | date: "%Y-%m-%d"}}'>{{post.date | date: "%d/%m/%Y"}}</time>
+                    <time datetime='{{post.date | date: "%Y-%m-%d"}}'>{{post.date | date: "%Y/%m/%d"}}</time>
                     <span><i class="angle double right icon"></i></span>
                     <a href='{{site.baseurl}}{{post.url}}'>{{post.title}}</a>
                 </div>
@@ -23,7 +23,7 @@
             </div>
 
             <i class="arrow left inline icon"></i>
-            <a href="{{ site.baseurl }}/tags/">View all</a>
+            <a href="{{ site.baseurl }}/tags/">View all categories</a>
         </div>
     {% include footer.html %}
     </div>

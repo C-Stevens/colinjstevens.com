@@ -1,7 +1,7 @@
 <div class="container" id="header">
     <div class="ui dividing header items">
         <div class="item" id="title">
-            <span>MogBlog</span>
+            <a href="{{ site.baseurl }}">MogBlog</a>
             <div class="content" id="titleDescription">Computer science and system administration with a sprinkle of math</div>
         </div>
         <div class="item" id="menu">
@@ -9,7 +9,7 @@
                 <div class="ui breadcrumb">
                     <a class="{% if include.activeTab == 'home' %} active {% endif %}  section" href="{{ site.baseurl }}">Home</a>
                     <div class="divider"> / </div>
-                    <a class="{% if include.activeTab == 'posts' %} active {% endif %} section" href="{{ site.baseurl}}/posts">Posts</a>
+                    <a class="{% if include.activeTab == 'archive' %} active {% endif %} section" href="{{ site.baseurl}}/archive">Archive</a>
                     <div class="divider"> / </div>
                     <a class="{% if include.activeTab == 'tags' %} active {% endif %} section" href="{{ site.baseurl }}/tags">Categories</a>
                     <div class="divider"> / </div>
