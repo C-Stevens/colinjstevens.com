@@ -3,7 +3,7 @@ This repository contains assets from a couple different projects. As such, some 
 
 | Asset                                         | Directory                                                      | License
 |-----------------------------------------------|----------------------------------------------------------------| -------:
-| [Semantic UI](http://semantic-ui.com/)        | `/node_modules/semantic-ui/`  | [MIT License](https://github.com/Semantic-Org/Semantic-UI/blob/master/LICENSE.md)
+| [Semantic UI](http://semantic-ui.com/)        | `/res/semantic/`  | [MIT License](https://github.com/Semantic-Org/Semantic-UI/blob/master/LICENSE.md)
 | [Subtle Patterns](http://subtlepatterns.com/) | `/res/img/bg.png`             | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/us/legalcode)
 | [Fira Sans](https://github.com/mozilla/Fira)  | `/res/font/`                  | [SIL OFL](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web)
 | Blog Posts                                    | `/blog/_posts`                | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
