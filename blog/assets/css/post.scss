@@ -31,6 +31,21 @@
         }
     }
 }
-.highlight pre, pre {
+.highlighter-rouge { background-color: #e8e8e8 }
+.highlight {
+    pre, pre {
         overflow-x: scroll;
+/*         background-color: inherit; */
+    }
+}
+
+.blog-image {
+    display: block;
+    margin: 0 auto 0 auto;
+}
+.blog-image-subtext {
+    text-align: center;
+    font-style: italic;
+    font-size: 95%;
+    color: grey;
 }

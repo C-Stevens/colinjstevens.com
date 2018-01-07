@@ -2,7 +2,24 @@
 <html lang="en">
 <head>
     {% include head.html %}
-    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/css/post.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/post.css"/>
+    {% for tag in page.tags %}
+        {% if tag == "math" %}
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                extensions: ["tex2jax.js"],
+                jax: ["input/TeX", "output/HTML-CSS"],
+                tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: true
+                },
+                "HTML-CSS": { availableFonts: ["TeX"] }
+            });
+        </script>
+        <script type="text/javascript" src="{{ site.baseurl }}/assets/js/MathJax/MathJax.js"></script>
+        {% endif %}
+    {% endfor %}
     <title>MogBlog &mdash; {{ page.title }}</title>
     <script>
         $(document).ready(function() {
