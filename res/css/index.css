@@ -1,5 +1,9 @@
-body {
+html,body {
     background:url("/res/img/bg.png");
+    /* Prevent mainContainer margin from adding a scrollbar to the page: */
+    height: 100%;
+    margin: -1px 0 0 0;
+    padding-top: 1px;
 }
 
 .main.container {
@@ -27,12 +31,9 @@ body {
     max-width: 99.5%;
 }
 
-.secondary.menu {
+#siteHeader {
     background:url("/res/img/bg.png");
-    margin-top: 4em;
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
+    width: 100% !important;
     transition:
         border 0.5s ease,
         padding 0.5s ease,
@@ -40,12 +41,6 @@ body {
         box-shadow 0.5s ease,
         padding 0.5s ease
     ;
-}
-
-.secondary.menu.fixed {
-    background:url("/res/img/bg.png");
-    border-bottom: 5px solid #DDD !important;
-    padding-bottom: 3px;
 }
 
 /* About tab styling */

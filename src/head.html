@@ -9,12 +9,18 @@
 <script src="res/semantic/dist/semantic.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('.secondary.menu').sticky();
         $('#main_content .menu .item').tab({
             history : true,
             context : '#main_content',
             historyType : 'state',
             path        : '/',
+        });
+        $("#siteHeader").sticky({
+            context: "#main_content",
+            onStick:    function() { // Prevent Semantic from auto-sizing the menu to a smaller width than the content
+                $(this).width("100%"); // Setting this to any value seems to snap the element to 100% anyway
+                $(this).offset({left: 0});
+            }
         });
     });
 </script>
