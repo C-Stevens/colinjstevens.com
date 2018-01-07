@@ -4,6 +4,23 @@
     {% include head.html %}
     <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/css/post.css"/>
     <title>MogBlog &mdash; {{ page.title }}</title>
+    <script>
+        $(document).ready(function() {
+            $("article > h1,h2,h3,h4,h5,h6")
+            .mouseover(function() {
+                $(this).append('<i class="paragraph icon" id="p-icon"></i>');
+            })
+            .mouseout(function() {
+            
+                $(this).find("#p-icon").remove();
+            });
+            $("article > h1,h2,h3,h4,h5,h6").click(function() {
+                var id = $(this).attr('id');
+                $('html,body').animate({scrollTop: $(this).offset().top},'slow');
+                window.location.hash = id;
+            })
+        });
+    </script>
 </head>
 <body>
     <div class="ui segment container" id="mainContainer">
