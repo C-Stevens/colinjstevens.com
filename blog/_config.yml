@@ -11,4 +11,4 @@ strict_front_matter:    true
 plugins:
     - jekyll-feed
 
-github_url: "https://github.com/C-Stevens/colinjstevens.com/"
+github_url: "https://github.com/C-Stevens/colinjstevens.com"
