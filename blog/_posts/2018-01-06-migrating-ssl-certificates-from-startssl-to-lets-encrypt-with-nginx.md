@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "Colin Stevens"
-date: 2018-01-06 2:03 AM
+date: 2018-01-06 10:03 AM
 author_mail: "&#109;&#097;&#105;&#108;&#064;&#099;&#111;&#108;&#105;&#110;&#106;&#115;&#116;&#101;&#118;&#101;&#110;&#115;.&#099;&#111;&#109;"
 title:  "Migrating SSL Certificates from StartSSL to Let's Encrypt with Nginx"
 tags: ["sysadmin", "encryption", "nginx"]
