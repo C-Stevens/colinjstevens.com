@@ -1,3 +1,6 @@
 [submodule "res/semantic"]
 	path = res/semantic
 	url = https://github.com/Semantic-Org/Semantic-UI.git
+[submodule "blog/assets/js/MathJax"]
+	path = blog/assets/js/MathJax
+	url = https://github.com/mathjax/MathJax
