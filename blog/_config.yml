@@ -7,7 +7,9 @@ timezone:       "America/Chicago"
 
 # Build Commands
 strict_front_matter:    true
-#exclude: ["assets/js/MathJax"]
+#exclude: ["assets/js/MathJax"] # Enable in dev for faster builds
+sass:
+    style: compressed
 
 plugins:
     - jekyll-feed
