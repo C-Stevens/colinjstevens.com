@@ -1,0 +1,25 @@
+---
+layout: home
+title:  Home
+---
+{% for post in site.posts %}
+<div class="post">
+    <h1 id="postTitle" class="ui header">
+        <div class="content"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
+        <div id="postMetadata" class="sub header">
+            <span>By <a href="mailto:{{ post.author_mail }}" title="Contact author">{{ post.author }}</a> on {{ post.date | date: "%B %e, %Y &dash; %I:%M %P" }}</span>
+            <div id="postTags" class="ui basic right floated labels">
+                <i class="ui tag icon"></i>
+                {% for tag in post.tags %}
+                    <a class="ui label" href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </h1>
+    <article>
+        {{ post.excerpt }}
+    </article>
+    <a class="continueReading" href="{{ site.baseurl }}{{ post.url }}">Continue reading...</a>
+</div>
+<hr/>
+{% endfor %}
