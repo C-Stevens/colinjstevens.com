@@ -1,0 +1,31 @@
+---
+layout: posts_index
+title: Posts
+---
+<h1 class="ui header">Post Archive</h1>
+<div class="postIndex">
+    {% for post in site.posts %}
+        {% assign currentdate = post.date | date: "%Y" %}
+        {% if currentdate != date %}
+            {% unless forloop.first %}</ul>{% endunless %}
+            <h3 class="ui header">{{ currentdate }}</h4>
+            <ul class="ui bulleted list">
+            {% assign date = currentdate %}
+        {% endif %}
+            <li class="item">
+                    <time datetime='{{post.date | date: "%B %e"}}'>{{post.date | date: "%B %e"}}</time>
+                    <span><i class="angle double right icon"></i></span>
+                    <a href='{{site.baseurl}}{{post.url}}'>{{post.title}}</a> &mdash;
+                    <span style="font-style:italic">
+                        {% for tag in post.tags %}
+                            {% if forloop.last %}
+                                {{ tag }}
+                            {% else %}
+                                {{ tag }}, 
+                            {% endif %}
+                        {% endfor %}
+                    </span>
+            </li>
+        {% if forloop.last %}</ul>{% endif %}
+    {% endfor %}
+</div>
