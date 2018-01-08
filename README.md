@@ -12,7 +12,7 @@ This project makes use of a few assets to make things look slick and run well, m
 
 # Quickstart
 The site can be built and deployed very easily, with only minor modifications before building. See below for a quick guide to get the site running (sans the webserver configuration file).
-### Pull the base files and change directory
+### Clone the source files and run setup 
 ```shell
 $ git clone --recursive https://github.com/C-Stevens/colinjstevens.com.git /destination/dir
 $ cd /destination/dir
