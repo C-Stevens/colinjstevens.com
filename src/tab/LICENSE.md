@@ -1,0 +1,1 @@
+As files in this directory carry my name and personal details, all files in this directory are licensed under [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
