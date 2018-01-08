@@ -38,6 +38,7 @@ index:
 	python3 $(BUILD_DIR)/build.py $(BUILD_DIR)
 
 clean:
+	if [ ! -d $(BUILD_HISTORY_DIR) ]; then mkdir $(BUILD_HISTORY_DIR); fi
 	echo "Pruning build history to most recent 30 builds..." ; rm -f $(ls -1t $(BUILD_HISTORY_DIR) | tail -n +30) && echo "Prune successful."; \
 	if [ -f "$(BASE_DIR)/index.html" ]; then rm "$(BASE_DIR)/index.html"; fi
 	if [ -d "$(BUILD_DIR)" ]; then cp -r $(BUILD_DIR) $(BUILD_HISTORY_DIR)/$(BUILD_DATE); rm -rf "$(BUILD_DIR)"; fi
