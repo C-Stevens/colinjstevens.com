@@ -12,23 +12,27 @@ This project makes use of a few assets to make things look slick and run well, m
 
 # Quickstart
 The site can be built and deployed very easily, with only minor modifications before building. See below for a quick guide to get the site running (sans the webserver configuration file).
-## Pull the base files and change directory
+### Pull the base files and change directory
 ```shell
 $ git clone --recursive https://github.com/C-Stevens/colinjstevens.com.git /destination/dir
 $ cd /destination/dir
+$ ./setup.sh
 ```
-## Edit the makefile
-The makefile needs to be edited to update only the `BASE_DIR` value. In this case, it would be set to destination/dir
+### Edit the Makefile
+The makefile must be edited and `BASE_DIR` set explicitly to the new destination directory. Otherwise, the makefile will set `BASE_DIR` to `/home/web/www/colinjstevens.com` by default, and the site may not build properly in the future after initial setup.
 
-## Create asset symblink for the blog
-This is necessary for the blog subfolder to access resouces used by the main site
-```shell
-$ ln -s /full/path/to/destination/dir/res /full/path/to/destination/dir/blog/assets/borrow
-```
-## Build the site
+## Developing
+Included in the repository is [`stage-make.sh`](/stage-make.sh). This script allows easier development by specifying a different `BASE_DIR` and `JEKYLL_ARGS` before making the site with the `stage` target (this target will omit pulling recent changes from the remote repository).
+
+While developing, your dev directory can be set in this file (as well as any additional jekyll arguments, e.g `--drafts`) to avoid accidentally building the production site set in the Makefile's `BASE_DIR`.
+
+Since the `stage` target of the Makefile does not pull from the remote repository but the production target does, changes can be made, commited, and pushed to the repo so that when the production site is built normally all changes from development are included (**So don't push anything before testing!**)
+
+The production site can be built as easily as executing:
 ```shell
 $ make
 ```
+in the source directory of the site, provided you have set `BASE_DIR` to the correct production directory after running the setup script.
 
 # License
 For detailed licensing information, refer to the [license](/LICENSE.md) file.
