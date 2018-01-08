@@ -28,6 +28,8 @@ While developing, your dev directory can be set in this file (as well as any add
 
 Since the `stage` target of the Makefile does not pull from the remote repository but the production target does, changes can be made, commited, and pushed to the repo so that when the production site is built normally all changes from development are included (**So don't push anything before testing!**)
 
+Additionally, the `stage-make.sh` file allows arbitrary commands to be run under development environment variablesi with the `-i` flag. This allows any other command can be run under the same environment expected when using the script regurally (e.g to execute  `$ make clean` without cleaning the production directory).
+
 The production site can be built as easily as executing:
 ```shell
 $ make

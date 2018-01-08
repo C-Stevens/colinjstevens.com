@@ -1,7 +1,9 @@
+#!/bin/bash
 export BASE_DIR=/home/web/www/cjs-stage && \
 export JEKYLL_ARGS="--drafts" && \
+echo "Successfully loaded development env"
 
-if [ -n "$1" ] && [ "$1" == "-i" ]; then
+if [ "$1" == "-i" ]; then
 	echo -n ">>> " ; read cmd
 	eval $cmd
 else
