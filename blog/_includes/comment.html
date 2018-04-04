@@ -1,0 +1,30 @@
+<article id="comment-{{ include.id }}" class="comment {% if include.indent_level > 0 %}reply{% endif %}" style="margin-left: {{ site.comment_base_padding | times: include.indent_level }}px">
+    <a class="avatar">
+        <img src="https://i.imgur.com/fYDbiic.png"/> <!-- TODO: Use gravatar based on include.email -->
+    </a>
+    <div class="content">
+        <span class="author">{{ include.author }}</span>
+        <div class="metadata">
+            <span>{{ include.publish_date | date: "%B %e, %Y &dash; %I:%M %P" }}</span>
+        </div>
+        <div class="text">
+            {{ include.content | markdownify }}
+        </div>
+        <div class="actions">
+            <a class="reply">Reply</a> <!-- TODO: Make this do something -->
+            <a href="#comment-{{ include.id }}">Link</a>
+        </div>
+    </div>
+</article>
+
+{% assign replies = site.data.comments[page.slug] | where_exp: "comment", "comment.reply_to == include.id" %}
+{% for reply in replies %}
+    {% assign indent_level = include.indent_level | plus: 1 %}
+    {% assign author = reply.author %}
+    {% assign email = reply.email %}
+    {% assign publish_date = reply.publish_date %}
+    {% assign id = reply.id %}
+    {% assign moderated = reply.moderated %}
+    {% assign content = reply.content %}
+    {% include comment.html indent_level=indent_level title=title author=author email=email publish_date=publish_date id=id moderated=moderated content=content %}
+{% endfor %}

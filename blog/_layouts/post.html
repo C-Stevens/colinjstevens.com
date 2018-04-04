@@ -3,6 +3,7 @@
 <head>
     {% include head.html %}
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/post.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/comment.css"/>
     {% for tag in page.tags %}
         {% if tag == "math" %}
         <script type="text/x-mathjax-config">
@@ -28,7 +29,6 @@
                 $(this).append('<i class="paragraph icon" id="p-icon"></i>');
             })
             .mouseout(function() {
-            
                 $(this).find("#p-icon").remove();
             });
             $("article > h1,h2,h3,h4,h5,h6").click(function() {
@@ -36,6 +36,42 @@
                 $('html,body').animate({scrollTop: $(this).offset().top},'slow');
                 window.location.hash = id;
             })
+            
+            $("#commentForm").form({
+                on: 'blur',
+                fields: {
+                    displayName : {
+                        identifier: 'displayName',
+                        optional: true,
+                        rules: [{
+                            type: 'empty'
+                        }]
+                    },
+                    email: {
+                        identifier: 'email',
+                        optional: true,
+                        rules: [{
+                            type: 'email',
+                            prompt: 'Please enter a valid email address'
+                        }]
+                    },
+                    message: {
+                        identifier: 'message',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Please enter a comment'
+                        }]
+                    }
+                },
+                onSuccess: function(data) {
+                    console.log("Form valid! data: ");
+                    console.log(data);
+                    $(this).addClass('loading');
+                    // submit form data as post, wait for return value from php
+                    // remove loader
+                    // update with success or error
+                },
+            });
         });
     </script>
 </head>
@@ -58,6 +94,54 @@
             <article>
                 {{ content }}
             </article>
+            <div id="commentSection">
+                {% assign comment_count = site.data.comments[page.slug].size %}
+                <h1 class="ui horizontal divider header">
+                    {% if comment_count > 0 %}{{ comment_count }}{% else %}No{% endif %} Comments
+                </h1>
+                
+                <div class="ui comments">
+                {% unless comment_count > 0 %}
+                        <div class="ui message">
+                            <div class="header">No comments yet</div>
+                            Be the first?
+                        </div>
+                {% endunless %}
+                {% assign comments = site.data.comments[page.slug] | where_exp: "comment", "comment.reply_to == null" %}
+                {% for comment in comments %}
+                    {% assign indent_level = 0 %}
+                    {% assign author = comment.author %}
+                    {% assign email = comment.email %}
+                    {% assign publish_date = comment.publish_date %}
+                    {% assign id = comment.id %}
+                    {% assign moderated = comment.moderated %}
+                    {% assign content = comment.content %}
+                    {% include comment.html indent_level=indent_level title=title author=author email=email publish_date=publish_date id=id moderated=moderated content=content %}
+                 {% endfor %}
+                 </div>
+                 <h1 id="commentFormHeader" class="ui dividing header">Leave a Comment</h1>
+                 <form id="commentForm" class="ui form">
+                    <input id="hpt" type="text" class="hpt"/>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Display Name (Optional)</label>
+                            <input id="displayName" type="text" placeholder="Anonymous"/>
+                        </div>
+                        <div class="field">
+                            <label>Email (Optional, used for gravatar image)</label>
+                            <input id="email" type="text" placeholder="email@domain.tld"/>
+                        </div>
+                    </div>
+                    <div class="required field">
+                        <label>Message (Markdown enabled)</label>
+                        <textarea id="message" placeholder="Message..."></textarea>
+                    </div>
+                    <div id="commentSubmit" class="ui primary submit button">Submit</div>
+                    <div id="commentClear" class="ui clear button">Clear</div>
+                    <div class="ui error message"></div>
+                    <div class="ui success message"></div>
+                 </form>
+            </div>
         </div>
         {% include footer.html %}
     </div>
