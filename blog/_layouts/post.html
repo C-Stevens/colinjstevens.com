@@ -37,6 +37,18 @@
                 window.location.hash = id;
             })
             
+            $(".replyLink").click(function() {
+                var commentId = $(this).data("commentid");
+                $("input[id=replyTo").val(commentId); // Set reply_to variable for backend
+                var commentName = $("#comment-"+commentId).find(".author").text();
+                $("#commentFormHeader").text("Reply to "+commentName); // Update header
+                $('html,body').animate({scrollTop: $("#comment-"+commentId).offset().top}, 'slow');
+            });
+            $("#commentReset").click(function() {
+                // SemanticUI will take care of actually resetting the form fields
+                $("#commentFormHeader").text("Leave a Comment");
+            });
+            
             $("#commentForm").form({
                 on: 'blur',
                 fields: {
@@ -64,8 +76,8 @@
                     }
                 },
                 onSuccess: function(data) {
-                    console.log("Form valid! data: ");
-                    console.log(data);
+                    console.log("Form valid! data: "); //DEBUG
+                    console.log(data); //DEBUG
                     $(this).addClass('loading');
                     // submit form data as post, wait for return value from php
                     // remove loader
@@ -102,7 +114,7 @@
                 
                 <div class="ui comments">
                 {% unless comment_count > 0 %}
-                        <div class="ui message">
+                        <div class="ui compact message">
                             <div class="header">No comments yet</div>
                             Be the first?
                         </div>
@@ -122,6 +134,8 @@
                  <h1 id="commentFormHeader" class="ui dividing header">Leave a Comment</h1>
                  <form id="commentForm" class="ui form">
                     <input id="hpt" type="text" class="hpt"/>
+                    <input id="replyTo" type="hidden" value=""/>
+                    <input id="pageSlug" type="hidden" value="{{ page.slug }}"/>
                     <div class="two fields">
                         <div class="field">
                             <label>Display Name (Optional)</label>
@@ -136,8 +150,8 @@
                         <label>Message (Markdown enabled)</label>
                         <textarea id="message" placeholder="Message..."></textarea>
                     </div>
-                    <div id="commentSubmit" class="ui primary submit button">Submit</div>
-                    <div id="commentClear" class="ui clear button">Clear</div>
+                    <div class="ui primary submit button">Submit</div>
+                    <div id="commentReset" class="ui reset button">Reset</div>
                     <div class="ui error message"></div>
                     <div class="ui success message"></div>
                  </form>

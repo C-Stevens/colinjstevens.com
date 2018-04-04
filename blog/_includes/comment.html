@@ -11,7 +11,7 @@
             {{ include.content | markdownify }}
         </div>
         <div class="actions">
-            <a class="reply">Reply</a> <!-- TODO: Make this do something -->
+            <a class="replyLink" data-commentid="{{ include.id }}">Reply</a> <!-- TODO: Make this do something -->
             <a href="#comment-{{ include.id }}">Link</a>
         </div>
     </div>
