@@ -7,6 +7,13 @@
         <div class="metadata">
             <span>{{ include.publish_date | date: "%B %e, %Y &dash; %I:%M %P" }}</span>
         </div>
+        {% if site.env == "stage" %}
+            {% if moderated %}
+                <div class="ui green horizontal label">Moderated</div>
+            {% else %}
+                <div class="ui red horizontal label">Not moderated</div>
+            {% endif %}
+        {% endif %}
         <div class="text">
             {{ include.content | markdownify }}
         </div>
@@ -19,6 +26,10 @@
 
 {% assign replies = site.data.comments[page.slug] | where_exp: "comment", "comment.reply_to == include.id" %}
 {% for reply in replies %}
+    {% if reply.moderated == false and site.env != "stage" %}
+        {% continue %}
+    {% endif %}
+                    
     {% assign indent_level = include.indent_level | plus: 1 %}
     {% assign author = reply.author %}
     {% assign email = reply.email %}

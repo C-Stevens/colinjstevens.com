@@ -121,6 +121,10 @@
                 {% endunless %}
                 {% assign comments = site.data.comments[page.slug] | where_exp: "comment", "comment.reply_to == null" %}
                 {% for comment in comments %}
+                    {% if comment.moderated == false and site.env != "stage" %}
+                        {% continue %}
+                    {% endif %}
+                    
                     {% assign indent_level = 0 %}
                     {% assign author = comment.author %}
                     {% assign email = comment.email %}
@@ -128,6 +132,7 @@
                     {% assign id = comment.id %}
                     {% assign moderated = comment.moderated %}
                     {% assign content = comment.content %}
+
                     {% include comment.html indent_level=indent_level title=title author=author email=email publish_date=publish_date id=id moderated=moderated content=content %}
                  {% endfor %}
                  </div>

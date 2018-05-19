@@ -1,5 +1,6 @@
 #!/bin/bash
 export BASE_DIR=/home/web/www/cjs-stage && \
+export JEKYLL_ENV="stage" && \
 export JEKYLL_ARGS="--drafts" && \
 echo "Successfully loaded development env"
 
@@ -11,4 +12,5 @@ else
 fi
 
 unset -v JEKYLL_ARGS
+unset -v JEKYLL_ENV
 unset -v BASE_DIR
